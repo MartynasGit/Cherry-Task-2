@@ -12,18 +12,27 @@
       crossorigin="anonymous"
     />
     <title>Task - 2</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="container mt-3">
-      <h2>Triangle △</h2>
-      <form onsubmit="renderTriangles(e)">
-        <div class="mb-3 col-3">
-          <label for="numberOfTriangles" class="form-label">Number</label>
-          <input type="number" class="form-control" id="numberOfTriangles" />
-        </div>
-        <button type="submit" class="btn btn-primary">Render Triangles</button>
-      </form>
+    <div class="container mt-5 mb-5 d-flex">
+      <div class="col-6 p-3">
+        <h2>Diamonds ♦️</h2>
+        <form id="form">
+          <div class="mb-3 col-5">
+            <label for="diamondCountInput" class="form-label"
+              >Number of rows</label
+            >
+            <input type="number" class="form-control" id="diamondCountInput" value="7"/>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Render Diamond
+          </button>
+        </form>
+      </div>
+      <div>
+        <p class="diamondDiv"></p>
+      </div>
     </div>
   </body>
 </html>
