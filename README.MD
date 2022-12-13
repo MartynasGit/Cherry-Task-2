@@ -1,3 +1,6 @@
+
+Page is live https://martynasgit.github.io/Cherry-Task-2/
+
 # Task - 2
 
 Write a function witch on input number create a diamond shape (using recursion, loops are not allowed).
