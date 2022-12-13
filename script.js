@@ -1,11 +1,26 @@
 const input = document.getElementById("diamondCountInput");
 const diamond = document.querySelector(".diamondDiv");
 const form = document.getElementById("form");
+form.addEventListener("submit", handleSubmit);
 
+function renderDiamond(n, i = 1) {
+  const ASTERISK = "*";
+  const EPTY_SPACE = "&nbsp" + "&nbsp";
 
-function renderDiamonds(event) {
-    event.preventDefault();
-    diamond.innerHTML = input.value;
+  function line(i) {
+    return EPTY_SPACE.repeat((n - i) / 2) + ASTERISK.repeat(i) + "</br>";
+  }
+
+  if (i >= n) return;
+
+  diamond.innerHTML +=(line(i));
+  renderDiamond(n, i + 2);
+  diamond.innerHTML += line(i);
 }
 
-form.addEventListener('submit', renderDiamonds)
+function handleSubmit(event) {
+  event.preventDefault();
+  diamond.innerHTML = " ";
+
+  renderDiamond(input.value);
+}

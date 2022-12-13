@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,6 +12,13 @@
     />
     <title>Task - 2</title>
     <script src="script.js" defer></script>
+    <style>
+      .diamondDiv{
+        font-size: 15px;
+        font-family: none;
+        line-height: normal;
+      }
+    </style>
   </head>
   <body>
     <div class="container mt-5 mb-5 d-flex">
@@ -23,15 +29,18 @@
             <label for="diamondCountInput" class="form-label"
               >Number of rows</label
             >
-            <input type="number" class="form-control" id="diamondCountInput" value="7"/>
+            <input
+              type="number"
+              class="form-control"
+              id="diamondCountInput"
+              value="7"
+            />
           </div>
-          <button type="submit" class="btn btn-primary">
-            Render Diamond
-          </button>
+          <button type="submit" class="btn btn-primary">Render Diamond</button>
         </form>
       </div>
       <div>
-        <p class="diamondDiv"></p>
+        <span class="diamondDiv"></span>
       </div>
     </div>
   </body>
