@@ -3,19 +3,26 @@ const diamond = document.querySelector(".diamondDiv");
 const form = document.getElementById("form");
 form.addEventListener("submit", handleSubmit);
 
-function renderDiamond(n, i = 1) {
+function renderDiamond(size, currentSize = 1) {
   const ASTERISK = "*";
-  const EPTY_SPACE = "&nbsp" + "&nbsp";
-
-  function line(i) {
-    return EPTY_SPACE.repeat((n - i) / 2) + ASTERISK.repeat(i) + "</br>";
+  const EMPTY_SPACE = "&nbsp" + "&nbsp";
+  function line(currentSize) {
+    diamond.innerHTML +=
+      EMPTY_SPACE.repeat((size - currentSize) / 2) +
+      ASTERISK.repeat(currentSize) +
+      "</br>";
   }
-
-  if (i >= n) return;
-
-  diamond.innerHTML +=(line(i));
-  renderDiamond(n, i + 2);
-  diamond.innerHTML += line(i);
+  if (size % 2 == 0) {
+    if (currentSize >= size) return;
+    line(currentSize);
+    renderDiamond(size, currentSize + 2);
+    line(currentSize);
+  } else {
+    line(currentSize);
+    if (currentSize == size) return;
+    renderDiamond(size, currentSize + 2);
+    line(currentSize);
+  }
 }
 
 function handleSubmit(event) {
